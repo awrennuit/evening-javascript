@@ -1,0 +1,522 @@
+/**************/
+/**   HOME   **/
+/**************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+/***************/
+/**   CLOCK   **/
+/***************/
+#clock-wrapper {
+  background-image: linear-gradient(#1f2916, #3f522c, #1f2916);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  height: 100vh;
+}
+
+#clock-heading {
+  background-clip: text;
+  color: #f8c0ff;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  text-align: center;
+  text-shadow: 5px 5px #f5a7ff98, 10px 10px #f186ff50;
+}
+
+#clock-container {
+  background-color: #1f2916;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 4px #f8c0ff;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+}
+
+#clock-container::before {
+  background-color: #f8c0ff;
+  border-radius: 50%;
+  content: "";
+  height: 25px;
+  left: 50%;
+  position: absolute;
+  width: 25px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#clock-container p {
+  color: #fffdd9;
+  font-size: 24px;
+  margin: 24px 0;
+}
+
+#clock-hand {
+  animation: spin 3s;
+  border: 3px solid #f8c0ff;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left;
+  width: 120px;
+}
+
+#clock-hand::before {
+  border-top: 6px solid #f8c0ff;
+  border-right: 6px solid #f8c0ff;
+  content: "";
+  height: 15px;
+  left: 101px;
+  position: absolute;
+  top: -10px;
+  transform: rotate(45deg);
+  width: 15px;
+}
+
+#mon,
+#tue,
+#wed,
+#thu,
+#fri,
+#sat,
+#sun {
+  position: absolute;
+}
+
+#mon {
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+}
+
+#mon.active ~ #clock-hand {
+  transform: rotate(270deg);
+}
+
+#tue {
+  left: 315px;
+  top: 60px;
+}
+
+#tue.active ~ #clock-hand {
+  transform: rotate(320deg);
+}
+
+#wed {
+  left: 335px;
+  top: 200px;
+}
+
+#wed.active ~ #clock-hand {
+  transform: rotate(13deg);
+}
+
+#thu {
+  left: 255px;
+  top: 320px;
+}
+
+#thu.active ~ #clock-hand {
+  transform: rotate(63deg);
+}
+
+#fri {
+  left: 105px;
+  top: 320px;
+}
+
+#fri.active ~ #clock-hand {
+  transform: rotate(117deg);
+}
+
+#sat {
+  left: 20px;
+  top: 200px;
+}
+
+#sat.active ~ #clock-hand {
+  transform: rotate(167deg);
+}
+
+#sun {
+  left: 45px;
+  top: 60px;
+}
+
+#sun.active ~ #clock-hand {
+  transform: rotate(217deg);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(-720deg); }
+}
+
+@media (max-width: 480px) {
+  #clock-heading {
+    font-size: 2.5rem;
+  }
+
+  #clock-container {
+    height: 280px;
+    width: 280px;
+  }
+
+  #clock-hand {
+    width: 70px;
+  }
+
+  #clock-hand::before {
+    height: 15px;
+    left: 51px;
+    width: 15px;
+  }
+
+  #mon {
+    top: -15px;
+  }
+
+  #tue {
+    left: 210px;
+    top: 40px;
+  }
+
+  #wed {
+    left: 220px;
+    top: 130px;
+  }
+
+  #thu {
+    left: 170px;
+    top: 205px;
+  }
+
+  #fri {
+    left: 70px;
+    top: 205px;
+  }
+
+  #sat {
+    left: 15px;
+    top: 130px;
+  }
+
+  #sun {
+    left: 30px;
+    top: 40px;
+  }
+}
+
+/***************/
+/**  PALETTE  **/
+/***************/
+#palette-wrapper {
+  background-color: #302f35;
+  color: #fff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+#palette-list {
+  list-style-type: none;
+}
+
+#palette-list li {
+  border: 2px solid #fff;
+  display: inline-block;
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+#palette-list li span {
+  bottom: -30px;
+  font-size: 1.2rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+#generate-btn {
+  background-color: #ddc970;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4em;
+  height: 100px;
+  margin-top: 40px;
+  transition: 0.3s;
+  width: 100px;
+}
+
+#generate-btn:hover {
+  background-color: #ffe25f;
+}
+
+#generate-btn:active {
+  border: 2px solid #302f35;
+  font-size: 1.8em;
+}
+
+#mini-container {
+  border: 2px solid white;
+  margin: 40px auto 0 auto;
+  max-width: 300px;
+  padding: 10px;
+}
+
+#mini-btn-secondary, #mini-btn-primary {
+  cursor: pointer;
+  font-size: 1em;
+  height: 40px;
+  width: 100px;
+}
+
+#mini-btn-secondary {
+  background: transparent;
+  border-style: solid;
+  border-width: 2px;
+}
+
+#mini-btn-primary {
+  border: none;
+}
+
+/*****************/
+/**  HALLOWEEN  **/
+/*****************/
+#halloween-wrapper {
+  background-color: #000;
+  color: #fff;
+  font-family: "Luminari", Arial, Helvetica, sans-serif;
+  height: 100%;
+  padding: 40px;
+}
+
+#halloween-heading {
+  font-size: 4rem;
+  text-align: center;
+}
+
+#countdown-container {
+  border: 6px solid #ff9100;
+  font-size: 4rem;
+  height: 90px;
+  margin: 40px auto;
+  padding-top: 1.5rem;
+  text-align: center;
+  width: 460px;
+}
+
+#day,
+#hour,
+#min,
+#sec {
+  display: inline-block;
+  height: 86px;
+  position: relative;
+}
+
+#day {
+  width: 100px;
+}
+
+#hour,
+#min,
+#sec {
+  width: 80px;
+}
+
+#day::before,
+#hour::before,
+#min::before,
+#sec::before {
+  font-size: 1.2rem;
+  left: 10px;
+  position: absolute;
+  top: -5px;
+}
+
+#day::before {
+  content: "day"
+}
+
+#hour::before {
+  content: "hour"
+}
+
+#min::before {
+  content: "min"
+}
+
+#sec::before {
+  content: "sec"
+}
+
+#pumpkin {
+  background-color: #ff9100;
+  border-radius: 40% / 50%;
+  height: 200px;
+  margin: 80px auto;
+  position: relative;
+  width: 250px;
+}
+
+#pumpkin::before, #pumpkin::after {
+  content: '';
+  border: 2px solid #da7b00;
+  border-radius: 40% / 50%;
+  box-shadow: 0px 0px 5px 0px #b46600;
+  height: 196px;
+  position: absolute;
+}
+
+#pumpkin::before {
+  left: 25px;
+  width: 200px;
+}
+
+#pumpkin::after {
+  left: 75px;
+  width: 100px;
+}
+
+#pumpkin-stem, #pumpkin-stem::before {
+  position: absolute;
+  width: 20px;
+}
+
+#pumpkin-stem {
+  background-color: #5c442a;
+  border-top-left-radius: 20px;
+  height: 40px;
+  left: 120px;
+  top: -40px;
+  transform: skewX(-15deg);
+}
+
+#pumpkin-stem::before {
+  background-color: #000;
+  border-radius: 50%;
+  content: '';
+  height: 35px;
+  left: 15px;
+  top: 5px;
+}
+
+#pumpkin-eyes, #pumpkin-eyes::before {
+  background-color: #000;
+  border-right: 20px solid #ff9100;
+  border-bottom: 30px solid #000;
+  border-left: 20px solid #ff9100;
+  height: 0;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+}
+
+#pumpkin-eyes {
+  left: 60px;
+  top: 60px;
+}
+
+#pumpkin-eyes::before {
+  content: '';
+  left: 100px;
+  top: 0px;
+}
+
+#pumpkin-mouth {
+  background-color: #000;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 20px;
+  left: 80px;
+  position: absolute;
+  top: 150px;
+  width: 125px;
+  z-index: 1;
+}
+
+#pumpkin-mouth::before, #pumpkin-mouth::after {
+  background-color: #ff9100;
+  content: '';
+  height: 10px;
+  position: absolute;
+}
+
+#pumpkin-mouth::before {
+  left: 30px;
+  width: 20px;
+}
+
+#pumpkin-mouth::after {
+  left: 80px;
+  width: 15px;
+}
+
+@media(max-width: 635px) {
+  #halloween-heading {
+    font-size: 3rem;
+  }
+
+  #countdown-container {
+    font-size: 3rem;
+    height: 65px;
+    padding-top: 1rem;
+    width: 320px;
+  }
+
+  #day {
+    width: 80px;
+  }
+  
+  #hour,
+  #min,
+  #sec {
+    width: 60px;
+  }
+}
+
+@media(max-width: 490px) {
+  #halloween-wrapper {
+    margin: 40px 10px;
+  }
+
+  #halloween-heading {
+    font-size: 2rem;
+  }
+
+  #countdown-container {
+    font-size: 2.5rem;
+    height: 55px;
+    margin: 20px auto;
+    padding-top: 1rem;
+    width: 270px;
+  }
+
+  #day {
+    width: 70px;
+  }
+  
+  #hour,
+  #min,
+  #sec {
+    width: 50px;
+  }
+
+  #day::before,
+  #hour::before,
+  #min::before,
+  #sec::before {
+    font-size: 1.2rem;
+    left: 3px;
+    top: -10px;
+  }
+}
