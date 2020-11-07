@@ -8,10 +8,11 @@
   </head>
   <body>
     <div class="home-heading-container">
-      <h1 class="home-heading">Evening JavaScript</h1>
-      <a href="clock.html">CLOCK</a>
-      <a href="halloween.html">PUMPKIN</a>
-      <a href="palette.html">COLORS</a>
+      <h1 class="home-heading">
+        <span class="home-layer-two"></span>
+        <span class="home-layer-three"></span>
+        Evening JavaScript
+      </h1>
     </div>
     <div>
       <h3>Hey there!</h3>
@@ -21,22 +22,34 @@
         movie), and then put it online. Rather than have a bunch of random
         small, MVP-esque projects hangin' around in the void I figured I should
         put them all in one place. The ideas are usually a bit zany and
-        oftentimes not very helpful, but they're FUN! I'm always open to
+        oftentimes only *slightly* helpful, but they're FUN! I'm always open to
         suggestions!
       </p>
     </div>
-    <div>
+    <div id="project-container">
       <div class="project-card">
-        <img src="images/grey.png" alt="wild palette generator" height="300" width="470" />
-        <p class="project-heading">Wild Palette Generator</p>
+        <a href="palette.html">
+          <img src="images/grey.png" alt="wild palette generator" height="300" width="400" />
+          <div class="project-overlay">
+            <h2>Wild Palette Generator</h2>
+          </div>
+        </a>
       </div>
       <div class="project-card">
-        <img src="images/clock.png" alt="what day is it" height="300" width="470" />
-        <p class="project-heading">What Day Is It?</p>
+        <a href="clock.html">
+          <img src="images/clock.png" alt="what day is it" height="300" width="400" />
+          <div class="project-overlay">
+            <h2>What Day Is It?</h2>
+          </div>
+        </a>
       </div>
       <div class="project-card">
-        <img src="images/eerie-rectangle.png" alt="when is halloween" height="300" width="470" />
-        <p class="project-heading">When Is Halloween?</p>
+        <a href="halloween.html">
+          <img src="images/eerie-rectangle.png" alt="when is halloween" height="300" width="400" />
+          <div class="project-overlay">
+            <h2>Countdown to Halloween</h2>
+          </div>
+        </a>
       </div>
     </div>
     <script src="scripts.js"></script>
