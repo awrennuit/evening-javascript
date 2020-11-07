@@ -1,7 +1,3 @@
-//////////////
-//   HOME   //
-//////////////
-
 ///////////////
 //   CLOCK   //
 ///////////////
@@ -106,12 +102,12 @@ function setRange() {
 //   HALLOWEEN   //
 ///////////////////
 const spookyDay = `2021-10-31 00:00:00`;
-let ghoulsInTheGraveyard = '';
+let ghoulsInTheGraveyard = "";
 
 if (document.getElementById("day")) {
-ghoulsInTheGraveyard = setInterval(() => {
-  ghostsComeOutAndSkeletonsDance();
-}, 1000);
+  ghoulsInTheGraveyard = setInterval(() => {
+    ghostsComeOutAndSkeletonsDance();
+  }, 1000);
 }
 
 function ghostsComeOutAndSkeletonsDance() {

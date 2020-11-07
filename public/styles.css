@@ -11,6 +11,83 @@ body {
   height: 100vh;
 }
 
+#home-heading-container {
+  margin: 0 auto;
+  width: 430px;
+}
+
+#home-heading {
+  color: #fff;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 4rem;
+  text-shadow: 2px 2px 0 #222029, 3px 3px #fff;
+  width: 430px;
+}
+
+#home-heading::before,
+#home-heading::after {
+  background-color: #fff;
+  content: "";
+  left: -20px;
+  position: absolute;
+}
+
+#home-heading::before {
+  height: 60px;
+  top: 5px;
+  width: 5px;
+}
+
+#home-heading::after {
+  height: 5px;
+  top: 65px;
+  width: 500px;
+}
+
+#home-layer-two::before,
+#home-layer-two::after {
+  background-color: #222029;
+  content: "";
+  left: -18px;
+  position: absolute;
+  z-index: -1;
+}
+
+#home-layer-two::before {
+  height: 60px;
+  top: 7px;
+  width: 5px;
+}
+
+#home-layer-two::after {
+  height: 5px;
+  top: 67px;
+  width: 500px;
+}
+
+#home-layer-three::before,
+#home-layer-three::after {
+  background-color: #fff;
+  content: "";
+  left: -17px;
+  position: absolute;
+  z-index: -2;
+}
+
+#home-layer-three::before {
+  height: 60px;
+  top: 8px;
+  width: 5px;
+}
+
+#home-layer-three::after {
+  height: 5px;
+  top: 68px;
+  width: 500px;
+}
+
 #home-summary {
   border: 5px solid #fff;
   color: #fff;
@@ -23,9 +100,9 @@ body {
 #home-summary::before {
   background-color: transparent;
   border: 5px solid #222029;
-  content: '';
+  content: "";
   left: -3px;
-  height: 129px;
+  height: 138px;
   position: absolute;
   top: -3px;
   width: 732px;
@@ -35,9 +112,9 @@ body {
 #home-summary::after {
   background-color: transparent;
   border: 5px solid #fff;
-  content: '';
+  content: "";
   left: -2px;
-  height: 129px;
+  height: 138px;
   position: absolute;
   top: -2px;
   width: 732px;
@@ -47,87 +124,6 @@ body {
 #project-container {
   margin: 50px;
   text-align: center;
-}
-
-.home-heading-container {
-  margin: 0 auto;
-  width: 430px;
-}
-
-.home-heading-container a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.home-heading {
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  font-size: 3rem;
-  position: relative;
-  margin-bottom: 4rem;
-  text-shadow: 2px 2px 0 #222029, 3px 3px #fff;
-  width: 430px;
-}
-
-.home-heading::before,
-.home-heading::after {
-  background-color: #fff;
-  content: '';
-  left: -20px;
-  position: absolute;
-}
-
-.home-heading::before {
-  height: 60px;
-  top: 5px;
-  width: 5px;
-}
-
-.home-heading::after {
-  height: 5px;
-  top: 65px;
-  width: 500px;
-}
-
-.home-layer-two::before,
-.home-layer-two::after {
-  background-color: #222029;
-  content: '';
-  left: -18px;
-  position: absolute;
-  z-index: -1;
-}
-
-.home-layer-two::before {
-  height: 60px;
-  top: 7px;
-  width: 5px;
-}
-
-.home-layer-two::after {
-  height: 5px;
-  top: 67px;
-  width: 500px;
-}
-
-.home-layer-three::before,
-.home-layer-three::after {
-  background-color: #fff;
-  content: '';
-  left: -17px;
-  position: absolute;
-  z-index: -2;
-}
-
-.home-layer-three::before {
-  height: 60px;
-  top: 8px;
-  width: 5px;
-}
-
-.home-layer-three::after {
-  height: 5px;
-  top: 68px;
-  width: 500px;
 }
 
 .project-card {
@@ -167,6 +163,61 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/******************/
+/**   BACK BTN   **/
+/******************/
+.back-btn-container {
+  left: 10px;
+  position: absolute;
+  top: 0;
+}
+
+.back-btn-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.back-heading {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 2rem;
+  position: relative;
+  text-shadow: 2px 2px 0 #222029, 3px 3px #fff;
+}
+
+.back-arrow::before {
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  content: "";
+  height: 10px;
+  left: 10px;
+  position: absolute;
+  top: 13px;
+  transform: rotate(45deg);
+  width: 10px;
+}
+
+.back-arrow::after {
+  background-color: #fff;
+  content: "";
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 17px;
+}
+
+.back-letter-one {
+  left: 30px;
+  position: absolute;
+  top: 0;
+}
+
+.back-letter-two {
+  left: 44px;
+  position: absolute;
+  top: 13px;
 }
 
 /***************/
@@ -313,8 +364,12 @@ body {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  from { transform: rotate(-720deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(-720deg);
+  }
 }
 
 @media (max-width: 480px) {
@@ -431,7 +486,8 @@ body {
   padding: 10px;
 }
 
-#mini-btn-secondary, #mini-btn-primary {
+#mini-btn-secondary,
+#mini-btn-primary {
   cursor: pointer;
   font-size: 1em;
   height: 40px;
@@ -504,19 +560,19 @@ body {
 }
 
 #day::before {
-  content: "day"
+  content: "day";
 }
 
 #hour::before {
-  content: "hour"
+  content: "hour";
 }
 
 #min::before {
-  content: "min"
+  content: "min";
 }
 
 #sec::before {
-  content: "sec"
+  content: "sec";
 }
 
 #pumpkin {
@@ -528,8 +584,9 @@ body {
   width: 250px;
 }
 
-#pumpkin::before, #pumpkin::after {
-  content: '';
+#pumpkin::before,
+#pumpkin::after {
+  content: "";
   border: 2px solid #da7b00;
   border-radius: 40% / 50%;
   box-shadow: 0px 0px 5px 0px #b46600;
@@ -547,7 +604,8 @@ body {
   width: 100px;
 }
 
-#pumpkin-stem, #pumpkin-stem::before {
+#pumpkin-stem,
+#pumpkin-stem::before {
   position: absolute;
   width: 20px;
 }
@@ -564,13 +622,14 @@ body {
 #pumpkin-stem::before {
   background-color: #000;
   border-radius: 50%;
-  content: '';
+  content: "";
   height: 35px;
   left: 15px;
   top: 5px;
 }
 
-#pumpkin-eyes, #pumpkin-eyes::before {
+#pumpkin-eyes,
+#pumpkin-eyes::before {
   background-color: #000;
   border-right: 20px solid #ff9100;
   border-bottom: 30px solid #000;
@@ -587,7 +646,7 @@ body {
 }
 
 #pumpkin-eyes::before {
-  content: '';
+  content: "";
   left: 100px;
   top: 0px;
 }
@@ -604,9 +663,10 @@ body {
   z-index: 1;
 }
 
-#pumpkin-mouth::before, #pumpkin-mouth::after {
+#pumpkin-mouth::before,
+#pumpkin-mouth::after {
   background-color: #ff9100;
-  content: '';
+  content: "";
   height: 10px;
   position: absolute;
 }
@@ -621,7 +681,7 @@ body {
   width: 15px;
 }
 
-@media(max-width: 635px) {
+@media (max-width: 635px) {
   #halloween-heading {
     font-size: 3rem;
   }
@@ -636,7 +696,7 @@ body {
   #day {
     width: 80px;
   }
-  
+
   #hour,
   #min,
   #sec {
@@ -644,7 +704,7 @@ body {
   }
 }
 
-@media(max-width: 490px) {
+@media (max-width: 490px) {
   #halloween-wrapper {
     margin: 40px 10px;
   }
@@ -664,7 +724,7 @@ body {
   #day {
     width: 70px;
   }
-  
+
   #hour,
   #min,
   #sec {
