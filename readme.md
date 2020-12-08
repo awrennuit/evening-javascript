@@ -4,7 +4,7 @@
 
 An ever-growing collection of small, quirky, somewhat helpful projects that I code out in a few hours in the evening.  I have a ton of fun making these...even if they are simple and rough around the edges.  I'm always open to suggestions!~
 
-Check out my [portfolio](http://awrennuit.com/).
+Experience this madness for yourself [here](https://evening-javascript.web.app/index.html), and don't forget to check out my [portfolio](http://awrennuit.com/)!
 
 If you have questions or concerns, email me at awren.nuit@gmail.com.
 
