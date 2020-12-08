@@ -740,3 +740,17 @@ body {
     top: -10px;
   }
 }
+
+/*****************/
+/**     404     **/
+/*****************/
+#not-found-wrapper {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+#not-found {
+  color: #fff;
+  font-size: 3rem;
+  text-decoration: none;
+}
