@@ -2,7 +2,7 @@
 //   CLOCK   //
 ///////////////
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let today = "";
+let today = null;
 
 function getDayOfWeek() {
   const date = new Date().getDay();
@@ -102,7 +102,7 @@ function setRange() {
 //   HALLOWEEN   //
 ///////////////////
 const spookyDay = `2021-10-31 00:00:00`;
-let ghoulsInTheGraveyard = "";
+let ghoulsInTheGraveyard = null;
 
 if (document.getElementById("day")) {
   ghoulsInTheGraveyard = setInterval(() => {
@@ -146,4 +146,111 @@ function ghostsComeOutAndSkeletonsDance() {
   if (pumpkinsLaugh <= 0) {
     clearInterval(ghoulsInTheGraveyard);
   }
+}
+
+////////////////////
+//   CALCULATOR   //
+////////////////////
+const display = document.getElementById("calculator-screen");
+let currentOperator = null;
+let currentValue = "0";
+let hitEquals = false;
+let firstValue = null;
+let secondValue = null;
+
+updateDisplay();
+
+function clearDisplay() {
+  currentOperator = null;
+  currentValue = "0";
+  firstValue = null;
+  secondValue = null;
+  updateDisplay();
+}
+
+function generateRandomNumber(val) {
+  const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  let random = Math.round(Math.random() * (2 - 1) + 1);
+  random = random * plusOrMinus;
+  return +val + random;
+}
+
+function generateRandomOperator() {
+  const operatorList = ["+", "-", "*", "/"];
+  return operatorList[Math.floor(Math.random() * 4)];
+}
+
+function getDecimal() {
+  alert("oops you broke it :(\nstop using that button!");
+}
+
+function getNumber(val) {
+  if (currentValue === "0") {
+    currentValue = val;
+  } else if (hitEquals) {
+    currentValue = val;
+    hitEquals = false;
+  } else {
+    currentValue += val;
+  }
+  updateDisplay();
+}
+
+function getOperator(op) {
+  if (
+    (!currentOperator && op !== "=") ||
+    (!String(currentValue).match(/[*/+-]/g) && op !== "=")
+  ) {
+    setOperator(op);
+  } else if (op === "=" && String(currentValue).match(/[0-9]\s[*/+-]\s[0-9]/g)) {
+    secondValue = currentValue.substr(String(firstValue).length + 3);
+    performCalculation();
+  } else {
+    return;
+  }
+}
+
+function performCalculation() {
+  const firstNum = generateRandomNumber(firstValue);
+  const secondNum = generateRandomNumber(secondValue);
+  let result;
+
+  switch (currentOperator) {
+    case "+":
+      result = firstNum + secondNum;
+      currentValue = result;
+      break;
+    case "-":
+      result = firstNum - secondNum;
+      currentValue = result;
+      break;
+    case "*":
+      result = firstNum * secondNum;
+      currentValue = result;
+      break;
+    case "/":
+      result = firstNum / secondNum;
+      currentValue = result.toFixed(8);
+      break;
+    default:
+      break;
+  }
+
+  hitEquals = true;
+  firstValue = currentValue;
+  secondValue = null;
+  currentOperator = null;
+  updateDisplay();
+}
+
+function setOperator(op) {
+  firstValue = currentValue;
+  currentOperator = op;
+  currentValue += ` ${op} `;
+  hitEquals = false;
+  updateDisplay();
+}
+
+function updateDisplay() {
+  display.value = currentValue;
 }

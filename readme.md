@@ -48,3 +48,12 @@ Random Palette #2 <br/>
 
 Random Palette #3 <br/>
 <img src=public/images/green.png width="600" alt="sample palette 3"/>
+
+<br /><br /><br />
+
+# `Unhelpful Calculator`
+
+Creating a solid calculator requires a fair amount of planning and edge case handling. But what if it didn't? Introducing Unhelpful Calculator™! Solve several types of basic equations with near-accuracy! Convince your landlord that the bills just don't add up! Astonish your boss with your creative answers to problems that until now were thought to have only ONE correct answer! Call toll-free to order your Unhelpful Calculator™ now!
+
+<br/>
+<img src=public/images/calculator.png width="600" alt="the calculator"/>
