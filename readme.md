@@ -57,3 +57,12 @@ Creating a solid calculator requires a fair amount of planning and edge case han
 
 <br/>
 <img src=public/images/calculator.png width="600" alt="the calculator"/>
+
+<br /><br /><br />
+
+# `Just Say NO`
+
+Respecting yourself and setting firm boundaries is something most people struggle with. People with proficiency in these skills tend to have more time and energy for the things that they want to do. This program can help increase your confidence.
+
+<br/>
+<img src=public/images/no.png width="600" alt="just say no example"/>
