@@ -832,9 +832,9 @@ body {
   grid-area: 2 / 4 / 6 / 5;
 }
 
-/****************/
-/**     NO     **/
-/****************/
+/******************/
+/**    SAY NO    **/
+/******************/
 #no-wrapper {
   background-color: #ffc0cb;
   font-family: Arial, Helvetica, sans-serif;
