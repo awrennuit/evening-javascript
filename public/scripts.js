@@ -158,7 +158,9 @@ let hitEquals = false;
 let firstValue = null;
 let secondValue = null;
 
-updateDisplay();
+if (display) {
+  updateDisplay();
+}
 
 function clearDisplay() {
   currentOperator = null;
@@ -202,7 +204,10 @@ function getOperator(op) {
     (!String(currentValue).match(/[*/+-]/g) && op !== "=")
   ) {
     setOperator(op);
-  } else if (op === "=" && String(currentValue).match(/[0-9]\s[*/+-]\s[0-9]/g)) {
+  } else if (
+    op === "=" &&
+    String(currentValue).match(/[0-9]\s[*/+-]\s[0-9]/g)
+  ) {
     secondValue = currentValue.substr(String(firstValue).length + 3);
     performCalculation();
   } else {
@@ -253,4 +258,65 @@ function setOperator(op) {
 
 function updateDisplay() {
   display.value = currentValue;
+}
+
+////////////////
+//   SAY NO   //
+////////////////
+const noOutput = document.getElementById("no-output");
+const noList = [
+  "No.",
+  "No thank you.",
+  "No thanks",
+  "No, but thank you for asking.",
+  "Nah",
+  "Nope.",
+  "No way.",
+  "Not a chance.",
+  "Not right now.",
+  "Not now.",
+  "Not ever.",
+  "Not now. Not ever.",
+  "I don't think so.",
+  "I can't.",
+  "I can't help.",
+  "I won't.",
+  "I won't help.",
+  "I will not.",
+  "I will not help.",
+  "Some other time.",
+  "Ask me later.",
+  "I'm busy.",
+  "I don't have time.",
+  "My schedule won't allow it.",
+  "My schedule is full.",
+  "I'm booked today.",
+  "I'm limiting my commitments.",
+  "I'm spending some time on myself.",
+  "I'm not interested.",
+  "Not interested.",
+  "Bye.",
+  "Goodbye.",
+  "Leave me alone.",
+  "Go bug someone else.",
+  "There's no way I'm doing that.",
+  "Stop bothering me.",
+];
+
+function selectNoPhrase(e) {
+  rippleEffect(e);
+  noOutput.innerHTML = noList[Math.floor(Math.random() * noList.length)];
+}
+
+function rippleEffect(e) {
+  const ripple = document.getElementById('no-btn-span');
+  const left = e.offsetX - 50;
+  const top = e.offsetY - 50;
+  ripple.style.left = `${left}px`;
+  ripple.style.top = `${top}px`;
+  ripple.className = "animated";
+
+  setTimeout(() => {
+    ripple.className = "";
+  }, 500);
 }
