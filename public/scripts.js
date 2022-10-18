@@ -101,7 +101,7 @@ function setRange() {
 ///////////////////
 //   HALLOWEEN   //
 ///////////////////
-const spookyDay = `2021-10-31 00:00:00`;
+const spookyDay = seekOutSpookyDay();
 let ghoulsInTheGraveyard = null;
 
 if (document.getElementById("day")) {
@@ -146,6 +146,17 @@ function ghostsComeOutAndSkeletonsDance() {
   if (pumpkinsLaugh <= 0) {
     clearInterval(ghoulsInTheGraveyard);
   }
+}
+
+function seekOutSpookyDay() {
+  const date = new Date();
+  let target = '';
+  let year = new Date().getFullYear();
+
+  if (date.getMonth() > 9) year += 1;
+  target = `10/31/${year}`;
+  
+  return target;
 }
 
 ////////////////////
